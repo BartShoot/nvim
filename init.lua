@@ -67,6 +67,16 @@ require('lazy').setup({
     },
   },
 
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = true,
+  },
+
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
@@ -99,13 +109,12 @@ require('lazy').setup({
       end,
     },
   },
-
+  
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'Shatur/neovim-ayu',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme 'ayu'
     end,
   },
 
@@ -116,7 +125,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'ayu',
         component_separators = '|',
         section_separators = '',
       },
@@ -416,7 +425,7 @@ require('which-key').register({
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
