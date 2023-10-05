@@ -77,6 +77,13 @@ require('lazy').setup({
     config = true,
   },
 
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end
+  },
+
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
@@ -186,6 +193,12 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
 }, {})
 
+vim.keymap.set(
+  "",
+  "<leader>l",
+  require("lsp_lines").toggle,
+  { desc = "Toggle lsp_lines" }
+)
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
